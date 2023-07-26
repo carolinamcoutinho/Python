@@ -1,0 +1,17 @@
+from random import randint
+opcoes = ('Pedra', 'Papel', 'Tesoura')
+computador = jogador = 0
+while computador == jogador:
+    computador = randint(0, 2)
+    print('''[ 0 ] Pedra
+[ 1 ] Papel
+[ 2 ] Tesoura''')
+    jogador = int(input('Escolha sua jogada: '))
+    print(f'Computador joga {opcoes[computador].upper()}')
+    print(f'Jogador joga {opcoes[jogador].upper()}')
+    if computador == jogador:
+        print('EMPATE! JOGUE NOVAMENTE') 
+    elif computador == 0 and jogador == 2 or computador == 1 and jogador == 0 or computador == 2 and jogador == 1:
+        print('COMPUTADOR GANHA!')
+    else:
+        print('JOGADOR GANHA!')
